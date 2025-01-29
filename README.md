@@ -88,6 +88,6 @@ This project demonstrated the effectiveness of ensemble learning in predicting 5
 3. Execute the script to preprocess data, train models, and evaluate results.
 4. Run the code in terminal ``` python app.py ```
 ---
-![comapasion graph]()
+![comapasion graph](static/images/img/output1.png)
 
 
