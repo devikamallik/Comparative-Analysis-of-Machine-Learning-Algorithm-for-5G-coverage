@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% block a %}
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="{{url_for('about')}}">About </a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{{url_for('registration')}}">Registration</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('login')}}">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('team')}}">Team</a>
+</li>
+
+{% endblock %}
+
+
+{% block content %}
+  {% if msg %}
+    <h1 style="color: white;">{{ msg }}</h1>
+  {% endif %}
+
+
+<section class="result_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <video autoplay loop muted plays-inline>
+              <source width="2000"  src="/static/images/img/register.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+       
+           
+                <div class="layout_padding2-top">
+                    <div class="row">
+                      <div class="col-md-6 ">
+                        <form action="{{url_for('registration')}}" method="post">
+                                   
+                          <div class="contact_form-container">
+                            <h1 class="register-heading">Registration</h1>
+                            <div>
+                              <div class="mt-5">
+                                <input type="text" class="form-control" name="name" placeholder="Enter your name" style="width: 600px;" required pattern="[A-Za-z\s]+" title="Please enter a valid name (letters and spaces only)">
+                              </div>
+                              <div class="mt-5">
+                                <input type="email" class="form-control" name="email" placeholder="Enter your Email" style="width: 600px;" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address.">
+                              </div>
+                              <div class="mt-5">
+                                <input type="password" class="form-control" name="password" placeholder="Enter your password" style="width: 600px;" required pattern=".{8,}" title="Password must be at least 8 characters long">
+                              </div>
+                              <div class="mt-5">
+                                <input type="password" class="form-control" name="confirmpassword" placeholder="Enter your confirm password" style="width: 600px;" required pattern=".{8,}" title="Password must be at least 8 characters long">
+                              </div>
+                              <div class="mt-5">
+                                <input type="number" class="form-control" name="mobilenumber" placeholder="Enter your Mobilenumber" style="width: 600px;" min="1000000000" max="9999999999" required>
+                              </div>
+                              <div class="mt-5">
+                                <button type="submit">
+                                Register
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div> 
+                    </div>
+                  </div>
+              </div>
+            </div>  
+  </section>
+ 
+{% endblock %}

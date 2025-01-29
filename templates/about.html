@@ -1,0 +1,59 @@
+
+{% extends 'index.html' %}
+{% block a %}
+<li class="nav-item ">
+    <a class="nav-link" href="{{url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{{url_for('about')}}">About </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('registration')}}">Registration</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{{url_for('login')}}">Login</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" href="{{url_for('team')}}">Team</a>
+  </li>
+
+{% endblock %}
+{% block content %}
+
+<section class="about_section layout_padding">
+  
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+        ABOUT THE PROJECT
+        </h2>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <!-- <img src="/static/images/about-img.png" alt=""> -->
+          <p align="justify">This study conducts a comparative analysis of various machine learning algorithms to predict 
+            5G network coverage, focusing on identifying dominant feature parameters that influence coverage.
+             The results highlight prediction accuracy across different models,
+             offering insights into the most effective algorithms for 5G coverage forecasting.<br><br>
+            The project aims to analyze and compare the performance of various machine learning algorithms in
+             predicting and optimizing 5G network coverage. With the rapid deployment of 5G networks, ensuring
+              optimal coverage and capacity is critical to meet user demands and achieve efficient resource utilization.
+               Machine learning provides powerful tools for modeling complex patterns in wireless networks, 
+            enabling enhanced decision-making for network planning and Optimization.
+          </p>
+
+
+        </div>
+        <div class="detail-box">
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+
+
+
+

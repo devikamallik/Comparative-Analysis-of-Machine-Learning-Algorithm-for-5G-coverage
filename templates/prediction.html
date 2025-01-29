@@ -1,0 +1,171 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<center>
+    <section>
+      
+    
+        <form action="{{ url_for('prediction') }}" method="post">
+            {% if msg %}
+            <h1 class="text-aquamarine text-2xl font-bold mb-4" style="color: rgb(255, 255, 255);">{{ msg }}</h1>
+            {% endif %}
+            
+            <div class="flex flex-col items-center" style="margin-top: 300px;">
+                    <table class="mb-4">
+                        <tr>
+                            <td>
+                                <input type="number" name="f1" placeholder="Longitude" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f2" placeholder="Latitude" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f3" placeholder="CellID" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f4" placeholder="RSRP" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f5" placeholder="RSRQ" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f6" placeholder="RSSI" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>  
+                        </tr>
+    
+                        <tr>
+                            <td>
+                                <input type="number" name="f7" placeholder="DL_bitrate" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f8" placeholder="UL_bitrate" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <select name="f9" class="border border-gray-300 rounded-lg p-2 w-44" style="width: 220px;">
+                                    <option value="21.0">D</option>
+                                    <option value="1.0">2</option>
+                                    <option value="18.0">C</option>
+                                    <option value="17.0">B</option>
+                                    <option value="6.0">3</option>
+                                    <option value="0.0">1</option>
+                                    <option value="16.0">A029</option>
+                                    <option value="3.0">2909</option>
+                                    <option value="24.0">E13F</option>
+                                    <option value="13.0">9EF9</option>
+                                    <option value="20.0">CB8A</option>
+                                    <option value="12.0">9EF3</option>
+                                    <option value="5.0">29C4</option>
+                                    <option value="14.0">9EFF</option>
+                                    <option value="9.0">5</option>
+                                    <option value="4.0">290A</option>
+                                    <option value="23.0">E13D</option>
+                                    <option value="8.0">4</option>
+                                    <option value="10.0">5209</option>
+                                    <option value="25.0">E142</option>
+                                    <option value="2.0">29</option>
+                                    <option value="26.0">EBB</option>
+                                    <option value="15.0">A</option>
+                                    <option value="19.0">C4</option>
+                                    <option value="7.0">3F</option>
+                                    <option value="11.0">87</option>
+                                    <option value="22.0">DF0B</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="f10" class="border border-gray-300 rounded-lg p-2 w-44" style="width: 220px;">
+                                    <option value="">NODEHEX</option>
+                                    <option value="39.0">A81B</option>
+                                    <option value="0.0">12D</option>
+                                    <option value="6.0">432AE</option>
+                                    <option value="37.0">A709</option>
+                                    <option value="30.0">A4EF</option>
+                                    <option value="28.0">A4DF</option>
+                                    <option value="42.0">A99B</option>
+                                    <option value="29.0">A4E8</option>
+                                    <option value="50.0">C</option>
+                                    <option value="44.0">A9AA</option>
+                                    <option value="19.0">5A68E</option>
+                                    <option value="17.0">542F2</option>
+                                    <option value="33.0">A701</option>
+                                    <option value="40.0">A992</option>
+                                    <option value="14.0">53BEA</option>
+                                    <option value="25.0">6157E</option>
+                                    <option value="45.0">A9B0</option>
+                                    <option value="38.0">A710</option>
+                                    <option value="26.0">76C6C</option>
+                                    <option value="13.0">53B22</option>
+                                    <option value="36.0">A707</option>
+                                    <option value="8.0">438EE</option>
+                                    <option value="34.0">A705</option>
+                                    <option value="41.0">A995</option>
+                                    <option value="9.0">5328A</option>
+                                    <option value="15.0">53C4E</option>
+                                    <option value="32.0">A700</option>
+                                    <option value="20.0">5A6F2</option>
+                                    <option value="35.0">A706</option>
+                                    <option value="11.0">534E2</option>
+                                    <option value="18.0">5A5BC</option>
+                                    <option value="22.0">5A81E</option>
+                                    <option value="5.0">36536</option>
+                                    <option value="7.0">43300</option>
+                                    <option value="4.0">363A6</option>
+                                    <option value="43.0">A99D </option>
+                                    <option value="23.0">5AC06</option>
+                                    <option value="47.0">A9C9 </option>
+                                    <option value="10.0">532EE</option>
+                                    <option value="24.0">613EE</option>
+                                    <option value="49.0">AACF</option>
+                                    <option value="46.0">A9B6</option>
+                                    <option value="16.0">540FE</option>
+                                    <option value="48.0">AAB6</option>
+                                    <option value="21.0">5A7BA</option>
+                                    <option value="12.0">53802</option>
+                                    <option value="1.0">12D29</option>
+                                    <option value="2.0">12D77</option>
+                                    <option value="31.0">A515</option>
+                                    <option value="3.0">12DA0</option>
+                                    <option value="27.0">A4</option>
+                                    <option value="51.0">CCB</option>
+                                    <option value="52.0">CE1</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="f11" placeholder="RAWCELLID" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                            <td>
+                                <input type="number" name="f12" placeholder="NRxRSRP" class="border border-gray-300 rounded-lg p-2 w-44" step="any">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="mt-5">
+                        <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600" style="background-color: rgb(226, 169, 45);">Submit</button>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </form>
+    </section>
+    
+</center>
+
+{% endblock %}
+
+{% block a %}
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('upload') }}">Upload<span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('model') }}">Model</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('graph') }}">Graph</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+</li>
+{% endblock %}

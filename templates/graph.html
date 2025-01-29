@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<center>
+    <section>
+        <!-- <h1 style="color: rgb(5, 46, 228);">Your Graph</h1>  -->
+        <div class="mt-5">
+            <img src="/static/images/img/output1.png" alt="Graph" class="img-fluid">
+            <!-- {{ url_for('static', filename='static/images/img/output.png') }} -->
+        </div>
+    </section>
+</center>
+{% endblock %}
+
+{% block a %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('upload') }}">Upload</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('model') }}">Model</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('graph') }}">Graph<span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+</li>
+{% endblock %}

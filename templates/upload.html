@@ -1,0 +1,152 @@
+{% extends 'index.html' %}
+{% block content %}
+
+ <!-- <center>
+    <section>
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+             
+            <div class="mt-5" style="color: aliceblue;"><input type="file" name="file" style="width: 300px;"></div>
+            <div class="mt-5">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            
+        </form>
+    </section>
+</center> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5G Coverage Network</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full Page Background */
+    body {
+      height: 100vh;
+      background: radial-gradient(circle, #1a1a1d, #0c0c0d);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+     
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    /* Upload Form Container */
+    .upload-container {
+      text-align: center;
+      padding: 40px;
+      background: rgba(10, 10, 10, 0.9);
+      border-radius: 30px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8), 0px 0px 15px rgba(0, 255, 255, 0.5);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #00ffff;
+      text-shadow: 0px 0px 15px #00ffff, 0px 0px 25px #0073ff;
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #1a1a1d;
+      color: #fff;
+      cursor: pointer;
+      border: 2px solid #00ffff;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    input[type="file"]:hover {
+      transform: scale(1.1);
+      background: #0f0f0f;
+    }
+
+    button[type="submit"] {
+      margin: 20px 0;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(to right, #0073ff, #00ffff);
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 0px 15px #0073ff, 0px 0px 30px #00ffff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0px 0px 25px #0073ff, 0px 0px 50px #00ffff;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+  <!-- Upload Form -->
+  <div class="upload-container">
+    <h2>5G File Upload</h2>
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+      <div>
+        <input type="file" name="file" required>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+    {% if msg %}
+    <p class="alert-msg">{{ msg }}</p>
+    {% endif %}
+  </div>
+</center>
+</body>
+
+</html>
+
+
+
+
+
+
+
+{% if msg %}
+<script>
+  alert('{{ msg }}');
+</script>
+{% endif %}
+
+{% endblock %}
+
+{% block a %}
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('upload') }}">Upload<span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('model') }}">Model</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('prediction') }}">Prediction</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('graph') }}">Graph</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+</li>
+{% endblock %} 
